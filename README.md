@@ -12,7 +12,7 @@ The features are ```XYZRGBL```, the 3D ```XYZ``` position, the ```RGB``` color a
 You can load them as follows:
 ```python
 import numpy as np
-point_cloud = np.load('dataset/01/0001_00000.npy')
+point_cloud = np.load('dataset/01/0001_00000.npy')  # shape: (401326, 7)
 ```
 
 ### Tools
