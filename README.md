@@ -1,17 +1,17 @@
-# VKITTI 3D Dataset
+# VKITTI 3D Semantic Segmentation Dataset
 
-This is the dataset used to evaluate 3D semantic segmentation of point clouds in ([Engelmann et al. ICCV'W17](https://www.vision.rwth-aachen.de/page/3dsemseg)) **Exploring Spatial Context for 3D Semantic Segmentation of Point Clouds** paper.
+This is the outdoor dataset used to evaluate 3D semantic segmentation of point clouds in ([Engelmann et al. ICCV'W17](https://www.vision.rwth-aachen.de/page/3dsemseg)) **Exploring Spatial Context for 3D Semantic Segmentation of Point Clouds** paper.
 The dataset is directly derived from the [Virtual KITTI Dataset](http://www.europe.naverlabs.com/Research/Computer-Vision/Proxy-Virtual-Worlds) (v.1.3.1).
 
-All files here are provided for convenience only, you can generate the whole dataset yourself form the original Virtual Kitti Dataset.
+All files are provided for convenience only, you can generate the whole dataset yourself form the original Virtual Kitti Dataset.
 
 ## Usage
-We provide all the files as ```.npy``` files.
+All files are provided as ```.npy``` files.
 
 ## Training and Test procedure
 We trained our models using 6-fold cross validation as advertised in [Qi et al.](https://arxiv.org/pdf/1612.00593.pdf) (PointNet).
 We report the mean intersection over union (IoU), overall accuracy (over all points) and the average class accuracy.
 
-## Dataset Creation
+## Dataset Generation
 We split up the original sequences of Virutal KITTI into non-overlapping sub-sequences to perform 6-fold cross validation.
 For each sub-sequence, we selected 15 scenes at equidistance timesteps to avoid overlapping data.
