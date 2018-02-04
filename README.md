@@ -1,4 +1,4 @@
-# VKITTI 3D Semantic Segmentation Dataset
+## VKITTI 3D Semantic Segmentation Dataset
 
 ![VKITTI3D](teaser.png)
 
@@ -7,7 +7,7 @@ The dataset is directly derived from the [Virtual KITTI Dataset](http://www.euro
 
 All files are provided here for convenience only, you can generate the whole dataset yourself from the original Virtual KITTI Dataset.
 
-## Data Format
+### Data Format
 All files are provided as numpy ```.npy``` files.
 Each file fontains a ```N x F``` matrix, where ```N``` is the number of points inside the scene and ```F``` is the number of features per point, in this case ```F=7```.
 The features are ```XYZRGBL```, the 3D ```XYZ``` position, the ```RGB``` color and the ground truth semantic label ```L```. 
@@ -53,6 +53,6 @@ To visualize the point clouds:
 * ```python load.py```
 
 
-## TODOs
+#### TODOs
 * Add tools to generate data
 * Fix label problem with windows of cars
