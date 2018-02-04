@@ -15,13 +15,16 @@ import numpy as np
 point_cloud = np.load('dataset/01/0001_00000.npy')  # shape: (401326, 7)
 ```
 
-### Tools
-[Todo]
-
 ### Training and Evaluation
 We trained our models using 6-fold cross validation as advertised in [Qi et al.](https://arxiv.org/pdf/1612.00593.pdf) (PointNet). For example, you train your model using sequences 2-5 and evaluate on 1. You then do this for all 6 sequences and average your numbers of the 6 splits.
 We report the mean intersection over union (IoU), overall accuracy (over all points) and the average class accuracy.
 
-## Dataset Generation
+### Dataset Generation
+How was this dataset generated?
 We split up the original sequences of Virutal KITTI into non-overlapping sub-sequences to perform 6-fold cross validation.
 For each sub-sequence, we selected 15 scenes at equidistance timesteps to avoid overlapping data.
+
+## TODOs
+* Add meaning of labels
+* Add illustrations
+* Add tools to visualize?
