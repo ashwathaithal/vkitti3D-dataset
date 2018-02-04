@@ -54,6 +54,4 @@ To visualize the points clouds:
 
 
 ## TODOs
-* Add illustrations
-* Add tools to visualize?
 * Add tools to generate data
