@@ -41,6 +41,5 @@ We split up the original sequences of Virutal KITTI into non-overlapping sub-seq
 For each sub-sequence, we selected 15 scenes at equidistance timesteps to avoid overlapping data.
 
 ## TODOs
-* Add meaning of labels
 * Add illustrations
 * Add tools to visualize?
