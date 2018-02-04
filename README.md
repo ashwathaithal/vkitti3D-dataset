@@ -5,8 +5,15 @@ The dataset is directly derived from the [Virtual KITTI Dataset](http://www.euro
 
 All files are provided for convenience only, you can generate the whole dataset yourself form the original Virtual Kitti Dataset.
 
-## Usage
-All files are provided as ```.npy``` files.
+## Data Format
+All files are provided as numpy ```.npy``` files.
+Each file fontains a ```N x F``` matrix, where ```N``` is the number of points inside the scene and ```F``` is the number of features per point, in this case ```F=7```.
+The features are ```XYZRGBL```, the 3D ```XYZ``` position, the ```RGB``` color and the ground truth semantic label ```L```. 
+You can load them as follows:
+```python
+import numpy as np
+point_cloud = np.load('dataset/01/0001_00000.npy')
+```
 
 ### Tools
 [Todo]
