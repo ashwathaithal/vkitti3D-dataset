@@ -40,6 +40,16 @@ How was this dataset generated?
 We split up the original sequences of Virutal KITTI into non-overlapping sub-sequences to perform 6-fold cross validation.
 For each sub-sequence, we selected 15 scenes at equidistance timesteps to avoid overlapping data.
 
+### Tools
+Using the tools
+* Install [anaconda or miniconda](https://conda.io/docs/user-guide/install/index.html)
+* ```conda create --name vkitti3d python=3.6```
+* ```source activate vkitti3d```
+* ```conda install numpy```
+* ```conda install -c clinicalgraphics vtk```
+```python load.py```
+
+
 ## TODOs
 * Add illustrations
 * Add tools to visualize?
