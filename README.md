@@ -55,3 +55,4 @@ To visualize the point clouds:
 
 ## TODOs
 * Add tools to generate data
+* Fix label problem with windows of cars
