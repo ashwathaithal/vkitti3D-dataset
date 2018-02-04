@@ -43,3 +43,4 @@ For each sub-sequence, we selected 15 scenes at equidistance timesteps to avoid 
 ## TODOs
 * Add illustrations
 * Add tools to visualize?
+* Add tools to generate data
