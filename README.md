@@ -9,6 +9,7 @@ All files are provided for convenience only, you can generate the whole dataset 
 All files are provided as ```.npy``` files.
 
 ### Tools
+[Todo]
 
 ### Training and Evaluation
 We trained our models using 6-fold cross validation as advertised in [Qi et al.](https://arxiv.org/pdf/1612.00593.pdf) (PointNet). For example, you train your model using sequences 2-5 and evaluate on 1. You then do this for all 6 sequences and average your numbers of the 6 splits.
