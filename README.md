@@ -1,5 +1,7 @@
 # VKITTI 3D Semantic Segmentation Dataset
 
+![VKITTI3D](teaser.png)
+
 This is the outdoor dataset used to evaluate 3D semantic segmentation of point clouds in ([Engelmann et al. ICCV'W17](https://www.vision.rwth-aachen.de/page/3dsemseg)) **Exploring Spatial Context for 3D Semantic Segmentation of Point Clouds** paper.
 The dataset is directly derived from the [Virtual KITTI Dataset](http://www.europe.naverlabs.com/Research/Computer-Vision/Proxy-Virtual-Worlds) (v.1.3.1).
 
@@ -41,13 +43,14 @@ We split up the original sequences of Virutal KITTI into non-overlapping sub-seq
 For each sub-sequence, we selected 15 scenes at equidistance timesteps to avoid overlapping data.
 
 ### Tools
-Using the tools
+To visualize the points clouds:
+
 * Install [anaconda or miniconda](https://conda.io/docs/user-guide/install/index.html)
 * ```conda create --name vkitti3d python=3.6```
 * ```source activate vkitti3d```
 * ```conda install numpy```
 * ```conda install -c clinicalgraphics vtk```
-```python load.py```
+* ```python load.py```
 
 
 ## TODOs
