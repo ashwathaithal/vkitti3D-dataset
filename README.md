@@ -43,7 +43,7 @@ We split up the original sequences of Virutal KITTI into non-overlapping sub-seq
 For each sub-sequence, we selected 15 scenes at equidistance timesteps to avoid overlapping data.
 
 ### Tools
-To visualize the points clouds:
+To visualize the point clouds:
 
 * Install [anaconda or miniconda](https://conda.io/docs/user-guide/install/index.html)
 * ```conda create --name vkitti3d python=3.6```
