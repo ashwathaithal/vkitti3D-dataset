@@ -7,3 +7,11 @@ All files here are provided for convenience only, you can generate the whole dat
 
 ## Usage
 We provide all the files as ```.npy``` files.
+
+## Training and Test procedure
+We trained our models using 6-fold cross validation as advertised in [Qi et al.](https://arxiv.org/pdf/1612.00593.pdf) (PointNet).
+We report the mean intersection over union (IoU), overall accuracy (over all points) and the average class accuracy.
+
+## Dataset Creation
+We split up the original sequences of Virutal KITTI into non-overlapping sub-sequences to perform 6-fold cross validation.
+For each sub-sequence, we selected 15 scenes at equidistance timesteps to avoid overlapping data.
