@@ -50,7 +50,8 @@ To visualize the point clouds:
 * ```source activate vkitti3d```
 * ```conda install numpy```
 * ```conda install -c clinicalgraphics vtk```
-* ```python load.py```
+After installation you can visualize the original RGB point cloud and the corresponding semantic labels:
+```python tools/load.py```
 
 
 #### TODOs
