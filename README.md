@@ -37,11 +37,6 @@ point_cloud = np.load('dataset/01/0001_00000.npy')  # shape: (401326, 7)
 We trained our models using 6-fold cross validation as advertised in [Qi et al.](https://arxiv.org/pdf/1612.00593.pdf) (PointNet). For example, you train your model using sequences 2-5 and evaluate on 1. You then do this for all six sequences and average your numbers of all six splits.
 We report the mean intersection over union (IoU), overall accuracy (over all points) and the average class accuracy.
 
-### Dataset Generation
-How was this dataset generated?
-We split up the original sequences of Virutal KITTI into non-overlapping sub-sequences to perform 6-fold cross validation.
-For each sub-sequence, we selected 15 scenes at equidistance timesteps to avoid overlapping data.
-
 ### Tools
 To visualize the point clouds:
 
@@ -55,6 +50,19 @@ After installation you can visualize the original RGB point cloud and the corres
 
 ```python tools/load.py```
 
+### Dataset Generation
+How was this dataset generated?
+We split up the original sequences of Virutal KITTI into non-overlapping sub-sequences to perform 6-fold cross validation.
+For each sub-sequence, we selected 15 scenes/frames at equidistant timesteps to avoid overlapping data.
+
+| Original | Ours | Train/Test Frames - VKITTI |
+|---|---|---|
+|  1  | 1 |     0 - 170: 0,12,24,36,48,60,72,85,97,109,121,133,145,157, 170 |
+|  1  | 2 | 230 - 420: 230,243,257,270,284,297,311,325,338,352,365,379,392,406,420 |
+|  2  | 3 |     0 - 232: 0,15,31,47,63,79,95,111,127,143,159,175,191,207,223 |
+| 18 | 4 |   30 - 338 30,52,74,96,118,140,162,184,206,228,250,272,294,316,338 |
+| 20 | 5 |   80 - 444: 80,106,132,158,184,210,236,262,288,314,340,366,392,418,444 |
+| 20 | 6 | 500 - 800: 500,521,542,564,585,607,628,650,671,692,714,735,757,778,800 |
 
 #### TODOs
 * Add tools to generate data
