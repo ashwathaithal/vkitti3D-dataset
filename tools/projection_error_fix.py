@@ -126,8 +126,8 @@ if __name__ == '__main__':
                                                  "label which is erroneous and thus, decreasing the quality of the "
                                                  "test and training set.")
 
-    parser.add_argument('--mot_path', nargs='?', const='../mot_data/',
-                        type=str, default='../mot_data/',
+    parser.add_argument('--mot_path', nargs='?', const='../vkitti_1.3.1_motgt/',
+                        type=str, default='../vkitti_1.3.1_motgt/',
                         help='path to the .csv file containing the multi object tracking data '
                              'for bounding boxes of vehicles')
 
