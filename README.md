@@ -77,7 +77,7 @@ car class will be assigned to this class. The above figure shows the difference 
 original pointcloud and the fixed version (black color illustrates the don't care class).
 
 #### Generating a dataset with fixed projections from dataset version 1
-* Use ```download_mot_data.sh``` for downloading the multi object tracking data provided by [Naver Labs Europe](www.europe.naverlabs.com/NAVER-LABS-Europe)
+* Use ```download_mot_data.sh``` for downloading the multi object tracking data provided by [Naver Labs Europe](https://www.europe.naverlabs.com/NAVER-LABS-Europe)
 * Execute ```fixed_projection.py``` with parameters specified by argparse to generate a dataset with fixed projections
 
 #### TODOs
