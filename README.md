@@ -17,21 +17,22 @@ import numpy as np
 point_cloud = np.load('dataset/01/0001_00000.npy')  # shape: (401326, 7)
 ```
 
-| Label ID | Semantics | RGB             | Color       |
-|----------|-----------|-----------------|-------------|
-| 0  | Terrain         | [200, 90, 0]    | brown       |
-| 1  | Tree            | [0, 128, 50]    | dark green  |
-| 2  | Vegetation      | [0, 220, 0]     | bright green|
-| 3  | Building        | [255, 0, 0]     | red         |
-| 4  | Road            | [100, 100, 100] | dark gray   |
-| 5  | GuardRail       | [200, 200, 200] | bright gray |
-| 6  | TrafficSign     | [255, 0, 255]   | pink        |
-| 7  | TrafficLight    | [255, 255, 0]   | yellow      |
-| 8  | Pole            | [128, 0, 255]   | violet      |
-| 9  | Misc            | [255, 200, 150] | skin        |
-| 10 | Truck           | [0, 128, 255]   | dark blue   |
-| 11 | Car             | [0, 200, 255]   | bright blue |
-| 12 | Van             | [255, 128, 0]   | orange      |
+| Label ID | Semantics  | RGB             | Color       |
+|----------|------------|-----------------|-------------|
+| 0  | Terrain          | [200, 90, 0]    | brown       |
+| 1  | Tree             | [0, 128, 50]    | dark green  |
+| 2  | Vegetation       | [0, 220, 0]     | bright green|
+| 3  | Building         | [255, 0, 0]     | red         |
+| 4  | Road             | [100, 100, 100] | dark gray   |
+| 5  | GuardRail        | [200, 200, 200] | bright gray |
+| 6  | TrafficSign      | [255, 0, 255]   | pink        |
+| 7  | TrafficLight     | [255, 255, 0]   | yellow      |
+| 8  | Pole             | [128, 0, 255]   | violet      |
+| 9  | Misc             | [255, 200, 150] | skin        |
+| 10 | Truck            | [0, 128, 255]   | dark blue   |
+| 11 | Car              | [0, 200, 255]   | bright blue |
+| 12 | Van              | [255, 128, 0]   | orange      |
+| *13* | *Don't care*       | *[0, 0, 0]*      | *black*      |
 
 ### Training and Evaluation
 We trained our models using 6-fold cross validation as advertised in [Qi et al.](https://arxiv.org/pdf/1612.00593.pdf) (PointNet). For example, you train your model using sequences 2-5 and evaluate on 1. You then do this for all six sequences and average your numbers of all six splits.
@@ -64,6 +65,16 @@ For each sub-sequence, we selected 15 scenes/frames at equidistant timesteps to 
 | 20 | 5 |   80 - 444: 80,106,132,158,184,210,236,262,288,314,340,366,392,418,444 |
 | 20 | 6 | 500 - 800: 500,521,542,564,585,607,628,650,671,692,714,735,757,778,800 |
 
+### Projection Error Fix
+![FIXED_PROJECTION](fixed_projection.png)
+Fix of the projection error occuring in the original VKITTI numpy pointclouds introduced by 
+the wrong depth of car windows. The problem with the original point clouds is that they are 
+created from RGBD images. Voxels behind car glass will get the car class label 
+and thus, decreasing the quality of the test and training set.
+
+We introduced a new semantic class (*don't care class*). Voxels wrongly labeled with the 
+car class will be assigned to this class. The above figure shows the difference between the 
+original pointcloud and the fixed version (black color illustrates the don't care class).
+
 #### TODOs
 * Add tools to generate data
-* Fix label problem with windows of cars
