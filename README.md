@@ -1,6 +1,6 @@
 ## VKITTI 3D Semantic Segmentation Dataset
 
-![VKITTI3D](teaser.png)
+![VKITTI3D](doc/teaser.png)
 
 This is the outdoor dataset used to evaluate 3D semantic segmentation of point clouds in ([Engelmann et al. ICCV'W17](https://www.vision.rwth-aachen.de/page/3dsemseg)) **Exploring Spatial Context for 3D Semantic Segmentation of Point Clouds** paper.
 The dataset is directly derived from the [Virtual KITTI Dataset](http://www.europe.naverlabs.com/Research/Computer-Vision/Proxy-Virtual-Worlds) (v.1.3.1).
@@ -66,7 +66,7 @@ For each sub-sequence, we selected 15 scenes/frames at equidistant timesteps to 
 | 20 | 6 | 500 - 800: 500,521,542,564,585,607,628,650,671,692,714,735,757,778,800 |
 
 ### Projection Error Fix
-![FIXED_PROJECTION](fixed_projection.png)
+![FIXED_PROJECTION](doc/fixed_projection.png)
 Fix of the projection error occuring in the original VKITTI numpy pointclouds introduced by 
 the wrong depth of car windows. The problem with the original point clouds is that they are 
 created from RGBD images. Voxels behind car glass will get the car class label 
