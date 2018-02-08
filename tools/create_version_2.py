@@ -6,8 +6,11 @@ import os
 from tqdm import *
 import glob
 
+def distance_cutoff(pointcloud, cutoff):
+    cut = np.sqrt(np.square(pointcloud[:,:3]).sum(axis=1)) < cutoff
+    return pointcloud[cut]
 
-def main(mot_path, pc_paths, eps, out_path):
+def main(mot_path, pc_paths, eps, out_path, cutoff):
     if not os.path.exists(out_path):
         os.makedirs(out_path)
 
@@ -26,6 +29,8 @@ def main(mot_path, pc_paths, eps, out_path):
 
             original_seq_number, frame_number = filename.split('_')
             frame_number = int(frame_number.replace('.npy', ''))
+
+            pointcloud = distance_cutoff(pointcloud, cutoff)
 
             mot_data = pd.read_csv(os.path.join(mot_path, original_seq_number + '_clone.txt'), sep=" ", index_col=False)
             mot_data = mot_data[mot_data['frame'] == frame_number]
@@ -120,7 +125,10 @@ def arg_check_positive(value):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(formatter_class=RawTextHelpFormatter,
                                      description="Fix the projection error occuring in the original VKITTI "
-                                                 "numpy pointclouds introduced by the wrong depth of car windows.\n"
+                                                 "numpy pointclouds introduced by the wrong depth of car windows and "
+                                                 "cut off points which are farer away than a specified distance from "
+                                                 "the camera. Please note that vehicles farer away than 100m are not "
+                                                 "labeled anymore.\n"
                                                  "The problem with the original point clouds is that they are created "
                                                  "from RGBD images. Pixels behind a car glass will get the car class "
                                                  "label which is erroneous and thus, decreasing the quality of the "
@@ -144,11 +152,15 @@ if __name__ == '__main__':
                         help='since the bounding boxes are not 100% accurate introduce an epsilon >= 0 to enlarge the '
                              'bounding boxes a bit')
 
+    parser.add_argument('--cutoff', const=100, default=100, type=arg_check_positive, nargs='?',
+                        help='distance cutoff: points farer away than specified cutoff distance will be discarded')
+
     args = parser.parse_args()
 
     main(
         mot_path=args.mot_path,
         pc_paths=args.pc_path,
         eps=args.eps,
-        out_path=args.out_path
+        out_path=args.out_path,
+        cutoff=args.cutoff
     )
