@@ -78,6 +78,9 @@ def main(mot_path, pc_paths, eps, out_path, cutoff):
             check_idx = list(set(range(pointcloud.shape[0])) - set(vehicle_idx))
             pointcloud[np.array(check_idx)[np.where(pointcloud[check_idx, -1] >= 11)[0]], -1] = 13
 
+            # convert to float32
+            pointcloud = pointcloud.astype(np.float32)
+
             # save fixed point cloud
             np.save(os.path.join(out_path, new_seq_number, filename), pointcloud)
 
