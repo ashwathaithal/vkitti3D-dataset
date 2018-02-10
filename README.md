@@ -66,20 +66,5 @@ For each sub-sequence, we selected 15 scenes/frames at equidistant timesteps to 
 | 20 | 5 |   80 - 444: 80,106,132,158,184,210,236,262,288,314,340,366,392,418,444 |
 | 20 | 6 | 500 - 800: 500,521,542,564,585,607,628,650,671,692,714,735,757,778,800 |
 
-### Projection Error Fix
-![FIXED_PROJECTION](doc/fixed_projection.png)
-Fix of the projection error occuring in the original VKITTI numpy pointclouds introduced by 
-the wrong depth of car windows. The problem with the original point clouds is that they are 
-created from RGBD images. Voxels behind car glass will get the car class label 
-and thus, decreasing the quality of the test and training set.
-
-We introduced a new semantic class (*don't care class*). Voxels wrongly labeled with the 
-car class will be assigned to this class. The above figure shows the difference between the 
-original pointcloud and the fixed version (black color illustrates the don't care class).
-
-#### Generating a dataset with fixed projections from dataset version 1
-* Use ```download_mot_data.sh``` for downloading the multi object tracking data provided by [Naver Labs Europe](https://www.europe.naverlabs.com/NAVER-LABS-Europe)
-* Execute ```fixed_projection.py``` with parameters specified by argparse to generate a dataset with fixed projections
-
 #### TODOs
 * Add tools to generate data
