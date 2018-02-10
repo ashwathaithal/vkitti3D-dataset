@@ -49,7 +49,8 @@ To visualize the point clouds:
 
 After installation you can visualize the original RGB point cloud and the corresponding semantic labels:
 
-```python tools/visualize.py```
+```cd tools```
+```python visualize.py```
 
 ### Dataset Generation
 How was this dataset generated?
