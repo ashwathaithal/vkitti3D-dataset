@@ -7,6 +7,9 @@ The dataset is directly derived from the [Virtual KITTI Dataset](http://www.euro
 
 All files are provided here for convenience only, you can generate the whole dataset yourself from the original Virtual KITTI Dataset.
 
+### Download
+[VKITTI3D Dataset v1.0](https://www.vision.rwth-aachen.de/media/resource_files/vkitti3d_dataset_v1.0.zip)
+
 ### Data Format
 All files are provided as numpy ```.npy``` files.
 Each file contains a ```N x F``` matrix, where ```N``` is the number of points in a scene and ```F``` is the number of features per point, in this case ```F=7```.
