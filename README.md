@@ -35,7 +35,6 @@ point_cloud = np.load('dataset/01/0001_00000.npy')  # shape: (401326, 7)
 | 10 | Truck            | [0, 128, 255]   | dark blue   |
 | 11 | Car              | [0, 200, 255]   | bright blue |
 | 12 | Van              | [255, 128, 0]   | orange      |
-| *13* | *Don't care*       | *[0, 0, 0]*      | *black*      |
 
 ### Training and Evaluation
 We trained our models using 6-fold cross validation as advertised in [Qi et al.](https://arxiv.org/pdf/1612.00593.pdf) (PointNet). For example, you train your model using sequences 2-5 and evaluate on 1. You then do this for all six sequences and average your numbers of all six splits.
