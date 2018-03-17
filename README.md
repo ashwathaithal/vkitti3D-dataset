@@ -41,6 +41,7 @@ point_cloud = np.load('dataset/01/0001_00000.npy')  # shape: (401326, 7)
 
 If you use this dataset in your paper, please consider citing our ICCV'17 workshop paper:
 
+```
 @inproceedings{3dsemseg_ICCVW17,
   author    = {Francis Engelmann and
                Theodora Kontogianni and
@@ -50,16 +51,17 @@ If you use this dataset in your paper, please consider citing our ICCV'17 worksh
   booktitle = {{IEEE} International Conference on Computer Vision, 3DRMS Workshop, {ICCV}},
   year      = {2017}
 }
+```
 
 This dataset is based on:
-
+```
 @inproceedings{Gaidon:Virtual:CVPR2016,
     author = {Gaidon, A and Wang, Q and Cabon, Y and Vig, E},
     title = {Virtual Worlds as Proxy for Multi-Object Tracking Analysis},
     booktitle = {CVPR},
     year = {2016}
 }
-
+```
 
 ### Training and Evaluation
 We trained our models using 6-fold cross validation as advertised in [Qi et al.](https://arxiv.org/pdf/1612.00593.pdf) (PointNet). For example, you train your model using sequences 2-5 and evaluate on 1. You then do this for all six sequences and average your numbers of all six splits.
