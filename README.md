@@ -43,10 +43,7 @@ If you use this dataset in your paper, please consider citing our ICCV'17 worksh
 
 ```
 @inproceedings{3dsemseg_ICCVW17,
-  author    = {Francis Engelmann and
-               Theodora Kontogianni and
-               Alexander Hermans and
-               Bastian Leibe},
+  author    = {Francis, Engelmann and Theodora, Kontogianni and Alexander, Hermans and Bastian, Leibe},
   title     = {Exploring Spatial Context for 3D Semantic Segmentation of Point Clouds},
   booktitle = {{IEEE} International Conference on Computer Vision, 3DRMS Workshop, {ICCV}},
   year      = {2017}
